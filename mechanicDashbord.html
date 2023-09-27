@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mechanic Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="logo"
+        >M<i class="fa-solid fa-wrench fa-flip-horizontal"></i> MECHANIC</a
+      >
+      <a href="#">Find a Mechanic</a>
+      <a href="#">About Us</a>
+      <a href="#">Contact Us</a>
+      <div class="search">
+        <div class="icon"></div>
+        <div class="input">
+          <input type="text" placeholder="Search" id="mysearch" />
+        </div>
+        <span
+          class="clear"
+          onclick="document.getElementById('mysearch').value = ''"
+        ></span>
+      </div>
+      <button onclick="myFunction()" class="profile-image-2"></button>
+      <div id="myDropdown" class="dropdown-content">
+        <a href="login.html" class="user"
+          ><span class="sign-in-text">My Account</span></a
+        >
+        <a href="index.html"><span class="register-text">Logout</span> </a>
+      </div>
+    </header>
+    <hr class="header-line" />
+    <div class="dashboard-container">
+      <div class="aside">
+        <p>Your Account</p>
+        <a href="mechanicDashbord.html"
+          ><i class="fa-solid fa-house"></i
+          ><span class="dashboard-home">Home</span></a
+        >
+        <a href="clientPosition.html"
+          ><i class="fa-solid fa-location-dot"></i>Client Current Location</a
+        >
+        <a href="#"><i class="fa-solid fa-comments"></i>Client Feedback</a>
+      </div>
+      <div class="main">
+        <p class="service-title">SERVICE REQUESTS</p>
+        <p class="service-card-title">In progress</p>
+        <div class="client-card">
+          <div>
+            <p>John Doe</p>
+            <p>Kampala</p>
+          </div>
+          <div>
+            <a href="mechanicSummary.html"><button>Current Location</button></a>
+          </div>
+        </div>
+        <p class="service-card-title">New request</p>
+        <div class="client-card">
+          <div>
+            <p>Alice</p>
+            <p>Nansana</p>
+          </div>
+          <div><button>View</button></div>
+        </div>
+        <p class="service-card-title">Pending approval</p>
+        <div class="client-card">
+          <div>
+            <p>Henry</p>
+            <p>Kampala</p>
+          </div>
+          <!-- <div><button>View</button></div> -->
+        </div>
+        <p class="service-card-title">Rejected</p>
+        <div class="client-card">
+          <div>
+            <p>Hillary</p>
+            <p>Kampala</p>
+          </div>
+          <div><button>Delete</button></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const icon = document.querySelector(".icon");
+      const search = document.querySelector(".search");
+      icon.onclick = function () {
+        search.classList.toggle("active");
+      };
+
+      /* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+      function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+
+      // Close the dropdown if the user clicks outside of it
+      window.onclick = function (event) {
+        if (!event.target.matches(".profile-image-2")) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains("show")) {
+              openDropdown.classList.remove("show");
+            }
+          }
+        }
+      };
+    </script>
+  </body>
+</html>

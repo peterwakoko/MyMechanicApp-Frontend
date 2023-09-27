@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notify Mechanic</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="logo"
+        >M<i class="fa-solid fa-wrench fa-flip-horizontal"></i> MECHANIC</a
+      >
+      <a class="header-link" href="chooseMechanic.html">Find a Mechanic</a>
+      <a class="header-link" href="#">About Us</a>
+      <a class="header-link" href="#">Contact Us</a>
+      <div class="search">
+        <div class="icon"></div>
+        <div class="input">
+          <input type="text" placeholder="Search" id="mysearch" />
+        </div>
+        <span
+          class="clear"
+          onclick="document.getElementById('mysearch').value = ''"
+        ></span>
+      </div>
+      <button onclick="myFunction()" class="profile-image-2"></button>
+      <div id="myDropdown" class="dropdown-content">
+        <a href="login.html" class="user"
+          ><span class="sign-in-text">My Account</span></a
+        >
+        <a href="index.html"><span class="register-text">Logout</span> </a>
+      </div>
+    </header>
+    <hr class="header-line" />
+    <a class="back-nav" href="dashboard.html"
+      ><i class="fa-solid fa-arrow-left"></i>Back</a
+    >
+
+    <form action="">
+      <div class="myFeed-container">
+        <p class="your-feed-text">Your Feed</p>
+        <div>
+          <p>Post and keep track of your car services with your MY MECHANIC</p>
+          <p class="account-text">account.</p>
+        </div>
+        <div class="myFeed-card">
+          <div class="card-2">
+            <p>Rate your Mechanic.</p>
+            <p class="qn-text">How do you rate the Mechanic?</p>
+
+            <div class="myFeed-star">
+              <input type="radio" name="stars" value="5" />
+              <span class="star-1">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i>
+              </span>
+            </div>
+            <br />
+
+            <div class="myFeed-star">
+              <input type="radio" name="stars" value="4" />
+              <span class="star-2"
+                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ></span>
+            </div>
+
+            <br />
+
+            <div class="myFeed-star">
+              <input type="radio" name="stars" value="3" />
+              <span class="star-3"
+                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i
+              ></span>
+            </div>
+
+            <br />
+            <div class="myFeed-star">
+              <input type="radio" name="stars" value="2" /><span class="star-4"
+                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ></span>
+            </div>
+
+            <br />
+            <div class="myFeed-star">
+              <input type="radio" name="stars" value="1" />
+              <span class="star-5"><i class="fa-solid fa-star"></i></span>
+            </div>
+          </div>
+
+          <div class="card-1">
+            <p>Post your comment here.</p>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+          </div>
+          <button class="submit-btn">Submit</button>
+        </div>
+      </div>
+    </form>
+
+    <script>
+      const icon = document.querySelector(".icon");
+      const search = document.querySelector(".search");
+      icon.onclick = function () {
+        search.classList.toggle("active");
+      };
+
+      /* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+      function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+
+      // Close the dropdown if the user clicks outside of it
+      window.onclick = function (event) {
+        if (!event.target.matches(".profile-image-2")) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains("show")) {
+              openDropdown.classList.remove("show");
+            }
+          }
+        }
+      };
+    </script>
+  </body>
+</html>

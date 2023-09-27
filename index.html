@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Mechanic</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="logo">M<i class="fa-solid fa-wrench fa-flip-horizontal"></i> MECHANIC</a>
+      <a class="header-link" href="chooseMechanic.html">Find a Mechanic</a>
+      <a class="header-link" href="#">About Us</a>
+      <a class="header-link" href="#">Contact Us</a>
+      <div class="search">
+      <div class="icon"></div>
+      <div class="input">
+        <input type="text" placeholder="Search" id="mysearch" />
+      </div>
+      <span
+        class="clear"
+        onclick="document.getElementById('mysearch').value = ''"
+      ></span>
+    </div>
+     <button onclick="myFunction()" class="profile-image"></button>
+    <div id="myDropdown" class="dropdown-content">
+      <a href="login.html" class="user"
+        ><span class="sign-in-text">Sign in</span></a
+      >
+      <a href="signup.html" class="register-user"
+        ><span class="register-user-text">Register as a User</span>
+      </a>
+      <a href="mechanicSignup.html"
+        ><span class="register-technician-text">Register as a Technician</span>
+      </a>
+    </div>
+    </header>
+    <hr class="header-line" />
+    <main>
+      <div class="text-bg">Get your car fixed</div>
+      <div class="text-bg">anytime, anywhere</div>
+      <div class="text-md">Book with an Automotive Technician to make</div>
+      <div class="text-md">Car issues a thing of the past.</div>
+    </main>
+    <img class="map" src="./images/map.jpg" alt="map" width="200">
+    <img class="mechanics" src="./images/mechanics.jpg" alt="mechanics" width="290">
+    <footer>
+      <div class="footer-text">Get your car fixed</div>
+      <div class="footer-text">anytime, anywhere</div>
+      <div class="policy">
+        <a href="#">Terms</a></li>
+        <a href="#">Privacy</a></li>
+        <a href="#">Copyright &copy; 2023</a></li>
+        <a href="#">MY MECHANIC, Inc.</a></li>
+      </div>
+      <div class="socials">
+       <i class="fa-brands fa-facebook"></i>
+       <i class="fa-brands fa-twitter"></i>
+       <i class="fa-brands fa-linkedin"></i>
+       <i class="fa-brands fa-square-instagram"></i>
+      </div>
+      <hr class="footer-line" />
+    </footer>
+
+    <script>
+      const icon = document.querySelector(".icon");
+      const search = document.querySelector(".search");
+      icon.onclick = function () {
+        search.classList.toggle("active");
+      };
+
+            /* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+      function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+
+      // Close the dropdown if the user clicks outside of it
+      window.onclick = function (event) {
+        if (!event.target.matches(".profile-image")) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains("show")) {
+              openDropdown.classList.remove("show");
+            }
+          }
+        }
+      };
+    </script>
+  </body>
+</html>
